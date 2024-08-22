@@ -30,3 +30,14 @@ function show(){
     console.log(functionVar); // Throws ReferenceError
     console.log(functionLet); // Throws ReferenceError
     console.log(functionConst); // Throws ReferenceError
+
+// Practice task
+{
+    let ran = "I've run";
+    const run = "I will run";
+    var willrun = "I have ran";
+}
+
+let ran = "reassigned ran";
+const run = "reassigned run";
+var willrun = "reassigned willrun";
