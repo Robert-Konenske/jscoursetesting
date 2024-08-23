@@ -7,5 +7,5 @@ function calculateArea() {
     Grocery3 = parseFloat(document.getElementById('Grocery3').value);
    
 let total = Grocery1 + Grocery2 + Grocery3;
-document.getElementById('result').innerText = `The total amount is: ${total}`;
+document.getElementById('total').innerText = `The total amount is: ${total}`;
 }
