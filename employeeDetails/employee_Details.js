@@ -1,5 +1,5 @@
 const employees = [
-    { id: 1, name: 'John Doe', age: 30, department: 'IT', salary: 50000, specialization:'Javascript' },
+    { id: 1, name: 'John Doe', age: 30, department: 'IT', salary: 50000, specialization:'JavaScript' },
     { id: 2, name: 'Alice Smith', age: 28, department: 'HR', salary: 45000, specialization:'Python' },
     { id: 3, name: 'Bob Johnson', age: 35, department: 'Finance', salary: 60000, specialization:'Java' },
 
@@ -34,13 +34,10 @@ function findEmployeeById(employeeId) {
     }
 }
 
-function findEmployeeBySpecialization(specialization) {
-    const javaEmployee = employees.find(employee => employee.specialization === Javascript);
-    if (javaEmployee) {
-        document.getElementById('employeesDetails').innerHTML = `<p>${javaEmployee.id}: ${javaEmployee.name}: ${javaEmployee.name} - ${javaEmployee.department} - $${javaEmployee.salary}</p>`;
-    }
-    else{
-        document.getElementById('employeesDetails').innerHTML = 'no employee has been found with this ID';
-  
-    }
+function findBySpecializationJavaScript(specialization) {
+    const javaEmployee = employees.filter(employee => employee.specialization === 'JavaScript');
+    const javaSpecialistsHTML = javaEmployee.map(employee => 
+        `<p>${employee.id}: ${employee.name} - ${employee.department} - $${employee.salary}</p>`
+    ).join('');
+    document.getElementById('employeesDetails').innerHTML = javaSpecialistsHTML;
 }
