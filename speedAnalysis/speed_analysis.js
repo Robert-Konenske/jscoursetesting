@@ -25,6 +25,9 @@ function startTest() {
         var timeElapsed = (endTime - startTime) / 1000; // in seconds
         var userTypedText = document.getElementById("userInput").value;
 
+        // Get length of user text
+        var userTypedTextLength = userTypedText.length;
+
         // Split the text using regex to count words correctly
         var typedWords = userTypedText.split(/\s+/).filter(function (word) {
             return word !== "";
@@ -39,10 +42,11 @@ function startTest() {
         // Display the results
         var outputDiv = document.getElementById("output");
         outputDiv.innerHTML = "<h2>Typing Test Results:</h2>" +
+            "<p>Total Length: " + userTypedTextLength + "</p>" +
             "<p>Words Typed: " + typedWords + "</p>" +
             "<p>Time Elapsed: " + timeElapsed.toFixed(2) + " seconds</p>" +
             "<p>Words Per Minute (WPM): " + wpm + "</p>";
-
+            
         // Reset the button
         var button = document.getElementById("btn");
         button.innerHTML = "Start Test";
